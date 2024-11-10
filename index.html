@@ -70,6 +70,45 @@
             width: 100%;
             border-radius: 5px;
         }
+        appointment-form {
+    background: #f0f8ff;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.appointment-form h2 {
+    color: #4CAF50;
+}
+
+.appointment-form label {
+    display: block;
+    margin: 0.5em 0 0.2em;
+    font-weight: bold;
+}
+
+.appointment-form input,
+.appointment-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.appointment-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em 2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.appointment-form button:hover {
+    background-color: #45a049;
+}
     </style>
 </head>
 <body>
@@ -158,6 +197,27 @@
                 <li>Thyroid treatment</li>
                 <li>Diabetes mellitus</li>
             </ul>
+        </section>
+        <section class="appointment-form">
+            <h2 class="section-title">Book an Appointment</h2>
+            <form action="submit_appointment.php" method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+        
+                <label for="date">Preferred Appointment Date:</label>
+                <input type="date" id="date" name="date" required>
+        
+                <label for="message">Additional Notes:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+        
+                <button type="submit">Submit</button>
+            </form>
         </section>
     </div>
 
