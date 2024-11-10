@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HMS Homeopathic Clinic</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
@@ -31,13 +32,6 @@
             border-bottom: 2px solid #4CAF50;
             padding-bottom: 0.5em;
         }
-        .clinic-info {
-            text-align: center;
-            margin: 1em 0;
-        }
-        .clinic-info p {
-            margin: 0.5em 0;
-        }
         ul {
             list-style-type: none;
             padding: 0;
@@ -54,12 +48,6 @@
             margin: 1em 0;
             border-radius: 5px;
         }
-        .about-homeopathy img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-top: 1em;
-        }
         .about-homeopathy .images {
             display: flex;
             flex-wrap: wrap;
@@ -67,49 +55,87 @@
             justify-content: center;
         }
         .about-homeopathy .images img {
-            width: 100%;
+            width: 30%;
             border-radius: 5px;
         }
-        appointment-form {
-    background: #f0f8ff;
-    padding: 1em;
-    margin: 1em 0;
-    border-radius: 5px;
-    text-align: left;
-}
 
-.appointment-form h2 {
-    color: #4CAF50;
-}
+        /* Appointment Form Styles */
+        .appointment-form {
+            background: #f0f8ff;
+            padding: 1em;
+            margin: 1em 0;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .appointment-form h2 {
+            color: #4CAF50;
+        }
+        .appointment-form label {
+            display: block;
+            margin: 0.5em 0 0.2em;
+            font-weight: bold;
+        }
+        .appointment-form input,
+        .appointment-form textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .appointment-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.5em 2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .appointment-form button:hover {
+            background-color: #45a049;
+        }
 
-.appointment-form label {
-    display: block;
-    margin: 0.5em 0 0.2em;
-    font-weight: bold;
-}
+        /* Contact Details Styles */
+        .contact-details {
+            background: #f0f8ff;
+            padding: 1em;
+            margin: 1em 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .contact-details h2 {
+            color: #4CAF50;
+        }
+        .contact-details p {
+            margin: 0.5em 0;
+        }
+        .contact-details a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
 
-.appointment-form input,
-.appointment-form textarea {
-    width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.appointment-form button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 0.5em 2em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.appointment-form button:hover {
-    background-color: #45a049;
+        /* Thank You Message */
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 1em;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .degree {
+    font-size: 0.85em; /* Adjust this value to make it smaller */
 }
     </style>
+    <script>
+        function showThankYouMessage(event) {
+            event.preventDefault();
+            document.querySelector('.appointment-form').style.display = 'none';
+            document.querySelector('.thank-you').style.display = 'block';
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -117,21 +143,12 @@
     </header>
 
     <div class="container">
-        <section class="clinic-info">
-            <h2>Contact Information</h2>
-            <p>HMS Complex, behind Himalaya Textiles, MG Road, Tumkur. 572101</p>
-            <p>Timings: 10:00 am - 1:00 pm, 5:00 pm - 8:00 pm (Friday closed)</p>
-            <p>Contact: Dr. Shazia Sultana, BHMS, MPH</p>
-            <p>Phone: <a href="tel:+918660559976">+91-8660559976</a></p>
-        </section>
-
         <section class="about-homeopathy">
             <h2>About Homeopathy</h2>
             <p>Homeopathy is a natural and holistic approach to medicine that uses highly diluted substances to stimulate the body's self-healing mechanisms. Developed in the late 18th century, it is based on the principle of "like cures like," which suggests that a substance that causes symptoms in a healthy person can, in a very small dose, treat similar symptoms in a sick person.</p>
             <p>Homeopathic remedies are made from natural sources such as plants, minerals, and animals, and are prepared through a process of serial dilution and succussion (vigorous shaking). This unique preparation method makes them gentle, non-toxic, and suitable for patients of all ages.</p>
             <p>In homeopathy, treatments are individualized. Practitioners consider a patient’s physical, emotional, and mental well-being to find a remedy tailored to their specific symptoms. The goal is not only to treat the symptoms but also to address the root cause of the illness, promoting overall health and balance.</p>
 
-            <!-- Images Section -->
             <div class="images">
                 <img src="homeopathy1.jpg" alt="Homeopathic Remedies">
                 <img src="homeopathy2.jpg" alt="Natural Ingredients">
@@ -139,85 +156,42 @@
             </div>
         </section>
 
-        <section>
-            <h2 class="section-title">Treatment Offered</h2>
-
-            <h3>Skin Disease Treatment</h3>
-            <ul>
-                <li>Eczema</li>
-                <li>Acne</li>
-                <li>Dermatitis</li>
-                <li>Wart</li>
-                <li>Skin Allergies</li>
-            </ul>
-
-            <h3>Hair Fall Treatment</h3>
-            <ul>
-                <li>Alopecia areata</li>
-                <li>Dandruff</li>
-            </ul>
-
-            <h3>Joint Disorders</h3>
-            <ul>
-                <li>Osteoarthritis</li>
-                <li>Rheumatoid Arthritis</li>
-                <li>Spondylitis</li>
-            </ul>
-
-            <h3>Gastric Problems</h3>
-            <ul>
-                <li>Acidity</li>
-                <li>Hemorrhoids</li>
-                <li>Constipation</li>
-                <li>Irritable bowel syndrome</li>
-            </ul>
-
-            <h3>Respiratory Ailments</h3>
-            <ul>
-                <li>Asthma</li>
-                <li>Sinusitis</li>
-                <li>All Respiratory Allergies</li>
-            </ul>
-
-            <h3>Others</h3>
-            <ul>
-                <li>Gall Stones</li>
-                <li>Kidney Stones</li>
-                <li>Migraine</li>
-                <li>Anemia</li>
-                <li>Worm infections</li>
-                <li>Female sexual problems</li>
-            </ul>
-
-            <h3>Hormonal Imbalance</h3>
-            <ul>
-                <li>Dysmenorrhea</li>
-                <li>Irregular menses</li>
-                <li>PCOD</li>
-                <li>Thyroid treatment</li>
-                <li>Diabetes mellitus</li>
-            </ul>
-        </section>
+        <!-- Appointment Form Section -->
         <section class="appointment-form">
             <h2 class="section-title">Book an Appointment</h2>
-            <form action="submit_appointment.php" method="post">
+            <form onsubmit="showThankYouMessage(event)">
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required>
-        
+
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-        
+
                 <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" name="phone" required>
-        
+
                 <label for="date">Preferred Appointment Date:</label>
                 <input type="date" id="date" name="date" required>
-        
+
                 <label for="message">Additional Notes:</label>
                 <textarea id="message" name="message" rows="4"></textarea>
-        
+
                 <button type="submit">Submit</button>
             </form>
+        </section>
+
+        <!-- Thank You Message -->
+        <div class="thank-you">
+            Thank you for booking an appointment! We will get back to you soon.
+        </div>
+
+        <!-- Contact Details Section -->
+        <section class="contact-details">
+            <h2>Or Contact Us Directly</h2>
+            <p>Dr. Shazia Sultana, <span class="degree">BHMS, MPH</span></p>
+            <p>If you have any questions, feel free to reach out to us:</p>
+            <p>Phone: <a href="tel:+918660559976">+91-8660559976</a></p>
+            <p>Email: <a href="mailto:info@hmsclinic.com">info@hmsclinic.com</a></p>
+            <p>Address: HMS Complex, behind Himalaya Textiles, MG Road, Tumkur, 572101</p>
         </section>
     </div>
 
