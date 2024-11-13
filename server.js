@@ -18,7 +18,7 @@ app.post('/send-email', (req, res) => {
     const { name, email, phone, date, message } = req.body;
 
     const mailOptions = {
-        from: 'ghouse.ahamed@gmail.com',
+        from: email,
         to: 'hmshomeopathic@gmail.com', // Replace with your preferred email to receive form data
         subject: 'New Appointment Request',
         text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nDate: ${date}\nMessage: ${message}`
