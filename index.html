@@ -126,53 +126,16 @@
             font-weight: bold;
         }
         .degree {
-            font-size: 0.85em; /* Adjust this value to make it smaller */
-        }
+    font-size: 0.85em; /* Adjust this value to make it smaller */
+}
     </style>
-    
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        // Initialize EmailJS with your user ID
-        emailjs.init("hmshomeopathic@gmail.com"); // Replace YOUR_USER_ID with your EmailJS user ID
-
-        function sendEmail(event) {
+        function showThankYouMessage(event) {
             event.preventDefault();
-
-            // Collect form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const date = document.getElementById('date').value;
-            const message = document.getElementById('message').value;
-
-            // Use EmailJS to send the email
-            emailjs.send("service_exjgdlh", "template_x6xtfo8", {
-                name: name,
-                email: email,
-                phone: phone,
-                date: date,
-                message: message
-            }).then((response) => {
-                console.log("SUCCESS!", response.status, response.text);
-                document.querySelector('.appointment-form').style.display = 'none';
-                document.querySelector('.thank-you').style.display = 'block';
-            }).catch((error) => {
-                console.error("FAILED...", error);
-                alert("There was an error sending your email. Please try again later.");
-            });
+            document.querySelector('.appointment-form').style.display = 'none';
+            document.querySelector('.thank-you').style.display = 'block';
         }
     </script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16807842153">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-16807842153');
-</script>
 </head>
 <body>
     <header>
@@ -196,7 +159,7 @@
         <!-- Appointment Form Section -->
         <section class="appointment-form">
             <h2 class="section-title">Book an Appointment</h2>
-            <form action="/send-email" method="POST" onsubmit="sendEmail(event)">
+            <form action="/send-email" method="POST" onsubmit="showThankYouMessage(event)">
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required>
 
