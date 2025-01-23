@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HMS Homeopathic Clinic</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
@@ -26,15 +27,59 @@
         h1, h2 {
             color: #333;
         }
-        .appointment-form {
+        .section-title {
+            margin-top: 1em;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 0.5em;
+        }
+        /* About Section */
+        .about-homeopathy {
             background: #f0f8ff;
             padding: 1em;
             margin: 1em 0;
             border-radius: 5px;
         }
+        .about-homeopathy .images {
+            display: flex;
+            gap: 1em;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1em;
+        }
+        .about-homeopathy .images img {
+            width: 30%;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
         .appointment-form iframe {
             width: 100%;
-            border: none;
+            height: 800px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        /* Contact Section */
+        .contact-details {
+            background: #f0f8ff;
+            padding: 1em;
+            margin: 1em 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .contact-details h2 {
+            color: #4CAF50;
+        }
+        .contact-details a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            font-size: 0.9em;
+        }
+        .degree {
+            font-size: 0.85em;
         }
     </style>
 </head>
@@ -44,32 +89,39 @@
     </header>
 
     <div class="container">
-        <section class="appointment-form">
-            <h2 class="section-title">Book an Appointment</h2>
-            <!-- Google Form Embed -->
-            <iframe 
-                src="https://docs.google.com/forms/d/e/1FAIpQLSdPErmJiyDDA4MdlMTQlKJu2txaS16TxWVZYYEI2L2nLG6now/viewform?embedded=true" 
-                width="100%" 
-                height="800" 
-                frameborder="0" 
-                marginheight="0" 
-                marginwidth="0">
-                Loading…
-            </iframe>
+        <!-- About Homeopathy Section -->
+        <section class="about-homeopathy">
+            <h2 class="section-title">About Homeopathy</h2>
+            <p>Homeopathy is a natural and holistic approach to medicine that uses highly diluted substances to stimulate the body's self-healing mechanisms. Developed in the late 18th century, it is based on the principle of "like cures like."</p>
+            <p>Homeopathic remedies are made from natural sources such as plants, minerals, and animals, and are prepared through a process of serial dilution. The goal is to treat the root cause of illness and promote overall health and balance.</p>
+            
+            <div class="images">
+                <img src="homeopathy1.jpg" alt="Homeopathic Remedies">
+                <img src="homeopathy2.jpg" alt="Natural Ingredients">
+                <img src="homeopathy3.jpg" alt="Consultation and Care">
+            </div>
         </section>
 
+        <!-- Google Form Embed -->
+        <section class="appointment-form">
+            <h2 class="section-title">Book an Appointment</h2>
+           <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdPErmJiyDDA4MdlMTQlKJu2txaS16TxWVZYYEI2L2nLG6now/viewform?embedded=true" width="640" height="989" frameborder="0" marginheight="0" marginwidth="0">
+               Loading…
+           </iframe>
+        </section>
+
+        <!-- Contact Details Section -->
         <section class="contact-details">
             <h2>Or Contact Us Directly</h2>
-            <p>Dr. Shazia Sultana, <span class="degree">BHMS, MPH</span></p>
-            <p>If you have any questions, feel free to reach out to us:</p>
+            <p><strong>Dr. Shazia Sultana</strong>, <span class="degree">BHMS, MPH</span></p>
             <p>Phone: <a href="tel:+918660559976">+91-8660559976</a></p>
             <p>Email: <a href="mailto:hmshomeopathic@gmail.com">hmshomeopathic@gmail.com</a></p>
-            <p>Address: 12A Cross, P.H. Colony, Near Labour Colony Road, Tumkur, 572101</p>
+            <p>Address: 12A Cross, P.H Colony near Labour Colony Road, Tumkur, 572101</p>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 HMS Homeopathic Clinic</p>
+        <p>&copy; 2024 HMS Homeopathic Clinic | Designed with care.</p>
     </footer>
 </body>
 </html>
